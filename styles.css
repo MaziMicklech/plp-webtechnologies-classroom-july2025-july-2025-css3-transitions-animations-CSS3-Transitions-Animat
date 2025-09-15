@@ -1,0 +1,61 @@
+/* ========== Part 1: Transitions & Animations ========== */
+
+/* Button hover transition */
+.animated-btn {
+  padding: 10px 20px;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.animated-btn:hover {
+  background: #1769aa;
+  transform: scale(1.1);
+}
+
+/* Box with animation triggered via class */
+.box {
+  width: 150px;
+  height: 150px;
+  background: #4caf50;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* Keyframe animation */
+@keyframes slideAndFade {
+  0% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(200px); opacity: 0.5; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.box.animate {
+  animation: slideAndFade 2s ease-in-out;
+}
+
+/* Popup modal */
+.popup {
+  width: 250px;
+  padding: 20px;
+  background: #ff9800;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.popup.show {
+  transform: translateX(-50%) scale(1);
+}
